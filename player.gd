@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var gravity: float = 1000.0
 @export var jump_force: float = 500.0
 
+var hp = 100
+var mp = 50
+
 func _physics_process(delta: float) -> void:
 	var direction := Vector2.ZERO
 

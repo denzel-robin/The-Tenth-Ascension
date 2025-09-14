@@ -1,15 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cegsf7phk00tv"]
+[gd_scene load_steps=5 format=3 uid="uid://cegsf7phk00tv"]
 
 [ext_resource type="Script" uid="uid://l4e0lw40a5vf" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://1bndmp1irmcm" path="res://detect_enemies.gd" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(38, 59)
 
-[node name="Player" type="CharacterBody2D"]
-position = Vector2(394, 319)
-script = ExtResource("1_4flbx")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(1152, 648)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(572, 329)
+script = ExtResource("1_4flbx")
+metadata/_edit_group_ = true
+
+[node name="ShapeOfPlayer" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_4flbx")
 
@@ -21,3 +26,12 @@ offset_bottom = 40.0
 color = Color(0.12524, 0.12524, 0.12524, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DetectEnemies" type="Area2D" parent="."]
+script = ExtResource("2_onrkg")
+
+[node name="CameraShape" type="CollisionShape2D" parent="DetectEnemies"]
+shape = SubResource("RectangleShape2D_onrkg")
+
+[connection signal="body_entered" from="DetectEnemies" to="DetectEnemies" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectEnemies" to="DetectEnemies" method="_on_body_exited"]
