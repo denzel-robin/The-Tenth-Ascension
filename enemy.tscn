@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://byo1ouj8lv1rp"]
+[gd_scene load_steps=5 format=3 uid="uid://byo1ouj8lv1rp"]
 
 [ext_resource type="Script" uid="uid://bqu1t1j12x0mh" path="res://enemy.gd" id="1_7k104"]
+[ext_resource type="Script" uid="uid://1bndmp1irmcm" path="res://detect_enemies.gd" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 size = Vector2(70, 39.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
+size = Vector2(1152, 648)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_7k104")
@@ -16,3 +20,13 @@ offset_left = -35.0
 offset_top = -20.0
 offset_right = 35.0
 offset_bottom = 20.0
+color = Color(1, 0, 0.00939941, 1)
+
+[node name="DetectEnemies" type="Area2D" parent="."]
+script = ExtResource("2_4gyqm")
+
+[node name="CameraShape" type="CollisionShape2D" parent="DetectEnemies"]
+shape = SubResource("RectangleShape2D_qi2p4")
+
+[connection signal="body_entered" from="DetectEnemies" to="DetectEnemies" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectEnemies" to="DetectEnemies" method="_on_body_exited"]
