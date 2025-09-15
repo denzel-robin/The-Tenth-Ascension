@@ -1,18 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhwou1ub8ak8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryomm"]
-size = Vector2(1152, 21)
+size = Vector2(1166, 21)
 
 [node name="Floor" type="StaticBody2D"]
-position = Vector2(576, 638)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ryomm")
+metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -576.0
-offset_top = -11.0
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -584.0
+offset_top = -10.0
 offset_right = 576.0
-offset_bottom = 10.0
+offset_bottom = 11.0

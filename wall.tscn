@@ -4,15 +4,15 @@
 size = Vector2(644.5, 21)
 
 [node name="wall" type="StaticBody2D"]
-position = Vector2(1141, 71)
-rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(251.25, -0.5)
+position = Vector2(0, 324)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_oh6kn")
+metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -71.0
-offset_top = -11.0
-offset_right = 576.0
-offset_bottom = 10.0
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -322.25
+offset_top = -10.5
+offset_right = 324.75
+offset_bottom = 10.5

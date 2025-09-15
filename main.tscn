@@ -8,17 +8,16 @@
 [node name="Main" type="Node2D"]
 
 [node name="Floor" parent="." instance=ExtResource("1_0xm2m")]
-position = Vector2(1155, 637)
+position = Vector2(1155, 655)
 scale = Vector2(2, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(147, 579)
+position = Vector2(104, 570)
 
 [node name="Wall" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(2296, 71)
+position = Vector2(2296, 0)
 
 [node name="Wall2" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(10, 71)
 
 [node name="Enemy" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(262, 494)
