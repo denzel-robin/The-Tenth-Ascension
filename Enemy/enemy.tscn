@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://byo1ouj8lv1rp"]
 
-[ext_resource type="Script" uid="uid://bqu1t1j12x0mh" path="res://enemy.gd" id="1_7k104"]
-[ext_resource type="Script" uid="uid://1bndmp1irmcm" path="res://detect_enemies.gd" id="2_4gyqm"]
+[ext_resource type="Script" uid="uid://bqu1t1j12x0mh" path="res://Enemy/enemy.gd" id="1_7k104"]
+[ext_resource type="Script" uid="uid://1bndmp1irmcm" path="res://Enemy/detect_player.gd" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 size = Vector2(70, 39.5)
